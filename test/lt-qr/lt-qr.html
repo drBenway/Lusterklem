@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>hello-world</title>
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../node_modules/wct-browser-legacy/browser.js"></script>
+
+
+    <script type="module" src="../../lc-qr.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="basic">
+      <template>
+          <lc-qr></lc-qr>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      describe('<lc-qr>', () => {
+        var home;
+
+        before(async () => {
+          home = fixture('basic');
+          await home.updateComplete;
+        });
+
+        it('should render the component', () => {
+          //var title = home.shadowRoot.querySelector('#placeHolder');
+
+        });
+          it('should have a method isTypeNumber', function () {
+              expect(home.isTypeNumber).to.be.a('function');
+          });
+
+          it('should validate that a type can be only a number between 0 and 41', function () {
+              expect (home.isTypeNumber(1)).to.equal(true);
+              expect(home.isTypeNumber(41)).to.equal(false);
+              expect(home.isTypeNumber(-1)).to.equal(false);
+              expect(home.isTypeNumber(0)).to.equal(true);
+              expect(home.isTypeNumber("1")).to.equal(false);
+          });
+
+          it('should have a method isCorrectErrorCorrection', function () {
+              expect(home.isCorrectErrorCorrection).to.be.a('function');
+          });
+          it('should return true for isCorrectErrorCorrection if the passed parameter is L', function () {
+              expect(home.isCorrectErrorCorrection('L')).to.equal(true);
+          });
+          it('should return true for isCorrectErrorCorrection if the passed parameter is M', function () {
+              expect(home.isCorrectErrorCorrection('M')).to.equal(true);
+          });
+          it('should return true for isCorrectErrorCorrection if the passed parameter is Q', function () {
+              expect(home.isCorrectErrorCorrection('Q')).to.equal(true);
+          });
+          it('should return true for isCorrectErrorCorrection if the passed parameter is H', function () {
+              expect(home.isCorrectErrorCorrection('H')).to.equal(true);
+          });
+          it('should return false ofr isCorrectErrorCorrection if the passeed parameter is not L,M,Q or H', function () {
+              expect(home.isCorrectErrorCorrection('A')).to.equal(false);
+              expect(home.isCorrectErrorCorrection('N')).to.equal(false);
+              expect(home.isCorrectErrorCorrection('1')).to.equal(false);
+              expect(home.isCorrectErrorCorrection('<script>')).to.equal(false);
+          });
+          it('should have a function generte', function () {
+              expect(home.generate).to.be.a('function');
+          });
+          describe('triggerNewQR', function(){
+/*              before(function() {
+                  let spy = sinon.spy(home,'generate');
+              });*/
+              it('should have a method triggerNewQR', function () {
+                  expect(home.triggerNewQR).to.be.a('function');
+              });
+              it('should call the generate method', function () {
+              /*home.triggerNewQR();
+              expect(spy).to.have.been.called;*/
+              });
+          });
+
+      });
+    </script>
+  </body>
+</html>
