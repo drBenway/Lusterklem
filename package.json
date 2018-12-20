@@ -48,6 +48,6 @@
     "lint": "eslint --fix **/*.js",
     "postinstall": "npm run build",
     "start": "webpack-dev-server --env development",
-    "test": "polymer test --npm --skip-selenium-install"
+    "test": "polymer test --npm"
   }
 }
