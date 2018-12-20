@@ -1,12 +1,10 @@
 language: node_js
-
-- node_js: '8.11.3'
-    sudo: required
-    os: linux
-    dist: trusty
-    addons:
-      chrome: stable
-      firefox: latest
-    script:
-    - npm run lint
-    - npm run test
+sudo: required
+dist: trusty
+node_js: '8.11.3'
+addons:
+  firefox: latest
+  chrome: stable
+cache:
+  directories:
+  - node_modules
