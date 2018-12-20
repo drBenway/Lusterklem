@@ -7,6 +7,6 @@ language: node_js
     addons:
       chrome: stable
       firefox: latest
-    script:lint
+    script:
     - npm run lint
     - npm run test
