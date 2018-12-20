@@ -2,6 +2,7 @@
 # Lusterklem
 a set of reusable web components build with lit-html
 
+[![Build Status](https://travis-ci.org/drBenway/Lusterklem.svg?branch=master)](https://travis-ci.org/drBenway/Lusterklem)
 ##Components
 ###<lt-qr>
 A wrapper for [https://github.com/kazuhikoarase/qrcode-generator/tree/master/js]
@@ -38,4 +39,5 @@ Run the production build:
 npm run build
 node server.js
 ```
+
 
