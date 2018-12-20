@@ -1,4 +1,34 @@
-.idea
-dist
-node_modules
+## editors
+/.idea
+/.vscode
 *.iml
+
+## system files
+.DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+
+# for now we don't want lock files
+/yarn.lock
+/package-lock.json
+
+## bower
+/bower_components*/
+/bower-*.json
+
+## for our builds
+/lib/
+/build/
+dist/
+
+## temp folders
+/.tmp/
+
+## testing
+/wct.conf.js
+/wct.conf.json
+
+## storybook
+/.cache/

@@ -5,9 +5,12 @@
   <title>Tests</title>
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
   <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+  <script src="../node_modules/sinon/lib/sinon.js"></script>
 </head>
 <body>
   <script>
+    WCT.environmentScripts = ['']
+
     WCT.loadSuites([
      './lt-qr/lt-qr.html'
      ]);

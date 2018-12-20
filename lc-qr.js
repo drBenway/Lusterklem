@@ -1,3 +1,3 @@
-import { LusterklemQR } from './pacakges/lk-qr/Lusterklem-QR';
+import { LusterklemQR } from './packages/lk-qr/Lusterklem-QR';
 
 customElements.define('lc-qr', LusterklemQR);

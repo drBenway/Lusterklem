@@ -1,4 +1,4 @@
-'use strict';
+
 
 const { resolve, join } = require('path');
 const merge = require('webpack-merge');
@@ -23,26 +23,26 @@ const polyfills = [
   {
     from: resolve(`${webcomponentsjs}/webcomponents-*.js`),
     to: join(OUTPUT_PATH, 'vendor'),
-    flatten: true
+    flatten: true,
   },
   {
     from: resolve(`${webcomponentsjs}/bundles/*.js`),
     to: join(OUTPUT_PATH, 'vendor', 'bundles'),
-    flatten: true
+    flatten: true,
   },
   {
     from: resolve(`${webcomponentsjs}/custom-elements-es5-adapter.js`),
     to: join(OUTPUT_PATH, 'vendor'),
-    flatten: true
+    flatten: true,
   },
   {
     from: resolve('./node_modules/whatwg-fetch/fetch.js'),
-    to: join(OUTPUT_PATH, 'vendor')
+    to: join(OUTPUT_PATH, 'vendor'),
   },
   {
     from: resolve('./node_modules/promise-polyfill/dist/polyfill.min.js'),
-    to: join(OUTPUT_PATH, 'vendor')
-  }
+    to: join(OUTPUT_PATH, 'vendor'),
+  },
 ];
 
 const commonConfig = merge([
@@ -50,21 +50,23 @@ const commonConfig = merge([
     entry: './src/lusterklem-app.js',
     output: {
       path: OUTPUT_PATH,
-      filename: '[name].[chunkhash:8].js'
+      filename: '[name].[chunkhash:8].js',
     },
     module: {
       rules: [
         {
           test: /\.css$/,
           use: ['css-to-string-loader', 'css-loader',
-            { loader: 'postcss-loader', options: {
+            {
+              loader: 'postcss-loader',
+              options: {
                 ident: 'postcss',
                 plugins: () => [
-                  postcssPresetEnv()
-                ]
-              }
-            }
-          ]
+                  postcssPresetEnv(),
+                ],
+              },
+            },
+          ],
         },
         {
           test: /\.js$/,
@@ -73,16 +75,16 @@ const commonConfig = merge([
               loader: 'babel-loader',
               options: {
                 babelrc: true,
-                extends: join(__dirname + '/.babelrc'),
+                extends: join(`${__dirname}/.babelrc`),
                 cacheDirectory: true,
-                envName: ENV
-              }
-            }
-          ]
-        }
-      ]
-    }
-  }
+                envName: ENV,
+              },
+            },
+          ],
+        },
+      ],
+    },
+  },
 ]);
 
 const developmentConfig = merge([
@@ -91,8 +93,8 @@ const developmentConfig = merge([
     plugins: [
       new CopyWebpackPlugin(polyfills),
       new HtmlWebpackPlugin({
-        template: INDEX_TEMPLATE
-      })
+        template: INDEX_TEMPLATE,
+      }),
     ],
 
     devServer: {
@@ -101,9 +103,9 @@ const developmentConfig = merge([
       overlay: true,
       port: 9000,
       historyApiFallback: true,
-      host: 'localhost'
-    }
-  }
+      host: 'localhost',
+    },
+  },
 ]);
 
 const productionConfig = merge([
@@ -118,14 +120,14 @@ const productionConfig = merge([
           collapseWhitespace: true,
           removeComments: true,
           minifyCSS: true,
-          minifyJS: true
-        }
-      })
-    ]
-  }
+          minifyJS: true,
+        },
+      }),
+    ],
+  },
 ]);
 
-module.exports = mode => {
+module.exports = (mode) => {
   if (mode === 'production') {
     return merge(commonConfig, productionConfig, { mode });
   }
