@@ -3,7 +3,7 @@
 a set of reusable web components build with lit-html
 
 ##Components
-###<lt-qr>
+### <lt-qr>
 A wrapper for [https://github.com/kazuhikoarase/qrcode-generator/tree/master/js]
 
 exposed properties
