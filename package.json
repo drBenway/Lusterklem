@@ -1,11 +1,11 @@
 {
-  "name": "create-lit-app",
+  "name": "Lusterklem",
   "version": "1.0.0",
-  "author": "Pascal Schilp",
+  "author": "Yves Peeters",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/drBenway/Lusterklem"
   },
   "dependencies": {
     "@polymer/lit-element": "^0.6.1",
