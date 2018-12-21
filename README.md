@@ -15,12 +15,12 @@ exposed properties
 
 
 ##CLI commands
-### npm start
+### npm run serve
 
 Start `webpack-dev-server` on localhost `http://127.0.0.1:9000`:
 
 ```sh
-npm run start
+npm run serve
 ```
 
 ### npm test
