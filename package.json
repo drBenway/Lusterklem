@@ -46,8 +46,8 @@
   "scripts": {
     "build": "webpack --env production",
     "lint": "eslint --fix **/*.js",
-    "postinstall": "npm run build",
-    "start": "webpack-dev-server --env development",
+    "postinsall": "npm run build",
+    "serve": "webpack-dev-server --env development",
     "test": "polymer test --npm"
   }
 }

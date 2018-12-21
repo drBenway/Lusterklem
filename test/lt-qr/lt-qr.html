@@ -60,7 +60,7 @@
           it('should return false ofr isCorrectErrorCorrection if the passeed parameter is not L,M,Q or H', function () {
               expect(home.isCorrectErrorCorrection('A')).to.equal(false);
               expect(home.isCorrectErrorCorrection('N')).to.equal(false);
-              expect(home.isCorrectErrorCorrection('1')).to.equal(false);
+              expect(home.isCorrectErrorCorrection(1)).to.equal(false);
               expect(home.isCorrectErrorCorrection('<script>')).to.equal(false);
           });
           it('should have a function generte', function () {

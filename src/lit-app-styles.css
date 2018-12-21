@@ -17,4 +17,17 @@
   bottom: 25px;
   left: 25px;
 }
+.overview_table{
+  margin: 10px 0px 0px 10px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0px 0px 1px;
+  border-collapse: collapse;
+}
+.overview_table td, .overview_table th{
+  border-width: 0px 1px 1px 0px;
+  border-color: black;
+  border-style: solid;
+  padding: 5px;
 
+}
